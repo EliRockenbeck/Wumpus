@@ -1,0 +1,82 @@
+class UserInterface
+    {
+        private int[] roomDesigns = new int[30]; /*This array will be randomized to provide a random cave design between
+        several possible designs for each room. 30 is a placeholder for the number of rooms in the cave.*/
+        private void setRoomDesigns()
+        {
+            //Sets a random number which corresponds to a different room design for each room
+            Random rand = new Random();
+            for(int i = 0; i < 30; i++)
+            {
+                roomDesigns[i] = rand.Next(0, 6);
+            }
+        }
+        public UserInterface()
+        {
+            //Constructor
+        }
+        public void getMovementDirection()
+        {
+            //Returns the direction the user wants to move numerically with 0 being up and numbers increasing clockwise.
+            //This will be called by game control.
+            int move = 0;
+            //Calls game control 
+            //GameControl.movePlayer(move); 
+        }
+        public void draw(/*Room r, Player p,*/ String hint)
+        {
+            //Draws the cave and all other things on the screen
+            //Called by game control
+            //Room is a struct containing data about the room that allows UI to draw it (see Cave object)
+            //This includes whether there's a hint, there are bats, a pit, a wumpus, etc.
+            //Player is an object containing information about the player (score, inventory...)
+            //hint is the text the UI is supposed to show as a hint, if there is a hint to show.
+        }
+        public void drawHighScore()
+        {
+            //This is called when user wants to see the high scores. Displays the high scores on the screen.
+            //HighScore[] highScores = GameControl.getHighScore();
+            //highScores is an array of a struct HighScore containing the top scores and the names of the player
+        }
+        public void drawTrivia()
+        {
+            //This is called by game control when user needs to see a trivia question
+            //String question = GameControl.getTriviaQuestion();
+            //Displays this question
+        }
+        public void newGame()
+        {
+            //This is called when user wants to start a new game; game control is then called and told to start a new game
+            //GameControl.startGame();  
+        }
+        public void loseGame()
+        {
+            //This is called by game control when the user loses the game (in vanilla version by encountering the wumpus)
+            //Display lose screen (there will only be 1 way to lose in vanilla so no parameters needed)
+        }
+        public void winGame()
+        {
+            //This is called by game control when the user wins the game
+            //Display win screen (there will only be 1 way to win in vanilla so no parameters needed)
+        }
+        public void shootArrow()
+        {
+            //This is called when user inputs to shoot an arrow
+            //Calls game control to tell it an arrow has been shot
+            //GameControl.shootArrow();
+            //Displays animation of shooting arrow
+        }
+        public void purchaseArrow()
+        {
+            //This is called when user inputs to purchase an arrow
+            //Calls game control to tell it an arrow has been purchased
+            //GameControl.purchaseArrow();
+            //Displays animation of purchasing arrow
+        }
+        public void purchaseSecret()
+        {
+            //This is called when user inputs to purchase a secret
+            //Calls game control to tell it a secret has been purchased
+            //GameControl.purchaseSecret();
+            //Displays animation of purchasing secret
+        }
